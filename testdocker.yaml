@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  testsrv:
+    build: .
+    environment:
+      PORT: 3230
+    ports:
+      - "4130:3230"
