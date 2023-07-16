@@ -20,12 +20,14 @@ jobs:
     - name: Build the Docker image
       run: docker build --tag testdockercicd:1.0 .
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Test the Docker image
         run: docker run -d -p 3230:3130 --name testcicd testdockercicd:1.0 
   push_to_registry:
+    needs: [build,test]
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
