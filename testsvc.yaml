@@ -8,6 +8,6 @@ spec:
     app: testapp
   ports:
     - port: 3001
-      targetPort: 3001
+      targetPort: 3130
       protocol: TCP            
       nodePort: 31000

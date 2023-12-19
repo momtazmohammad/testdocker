@@ -57,8 +57,8 @@ curl -s http://podIP:port // or serviceIP or servicename
 
 kubectl logs testpod
 
-kubectl get [pod-name] -o yaml
-kubectl get [pod-name] description
+kubectl get pods [pod-name] -o yaml
+kubectl get pods [pod-name] 
 
 docker build --tag  momtaz/auth:1-alpine .
 kubectl apply -f auth-mongo-depl.yaml
@@ -144,9 +144,6 @@ volumes:
     driver: local
 
 
-Docker is used for building and running multiple transferable environments of the technology stack.
+Docker is used for building and running multiple portable environments of the technology stack.
 Jenkins is an automated software testing tool for your app.
 Kubernetes is a system for automating deployment, scaling, and management. In short, the entire orchestration of containerized applications.
-
-
-docker run --network docker-training_default --link docker-training-mongodb-1:db -p 8090:8080  --name myadminer  adminer
